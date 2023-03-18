@@ -6,6 +6,9 @@ import { HashRouter , Routes, Route } from "react-router-dom";
 import About from './About';
 import Contact from './Contact';
 import List from './List';
+import useToken from './components/useToken';
+// import Registration from './components/Registration';
+import Login from './components/Login';
 
 
 
@@ -16,6 +19,7 @@ function getForm(){
   if(!storeValues)return []
   return JSON.parse(storeValues)
 }
+
 function App() {
   const [darkMode, setDarkMode]=React.useState(true)
 
@@ -29,14 +33,23 @@ function App() {
           writeMeaning: ""
       }
   );
+  const [loginPage, setLoginPage]=React.useState(false)
 
+  // const [token, setToken] = React.useState();
 
+  // const token = getToken();
+  const { token, setToken } = useToken();
   
+  // if(!token) {
+  //   return <Login setToken={setToken} />
+  // }
 
   const styles ={
     display: show? "block" : "none"
 
 }
+setTimeout(() => setLoginPage(true), 3000);
+
   function toggleDarkMode(){
 setDarkMode(function(prev){
   if(!prev){
@@ -46,15 +59,17 @@ setDarkMode(function(prev){
   }
 })
   }
+
+  
   return (
   <main className={darkMode ? "dark" : ""}>
     <div  className='container'>
       {/* <NavBar darkMode={darkMode} toggleDarkMode={toggleDarkMode} /> */}
       {/* <Main darkMode={darkMode}/> */}
-      <HashRouter >
+       <HashRouter >
       <Routes>
         <Route  path="/" element={<NavBar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}>
-          <Route index element={<Home darkMode={darkMode} storedData={storedData}  randomWord={randomWord} formData={formData} show={show} setFormData={setFormData} setRandomWord={setRandomWord} setStoredData={setStoredData} setShow={setShow}/>}  />
+        <Route index element={<Home darkMode={darkMode} storedData={storedData}  randomWord={randomWord} formData={formData} show={show} setFormData={setFormData} setRandomWord={setRandomWord} setStoredData={setStoredData} setShow={setShow}/>}  />
 
           <Route path="About" element={<About />} />
 
@@ -64,9 +79,11 @@ setDarkMode(function(prev){
         </Route>
       </Routes>
     </HashRouter>
-
-
+    
+    {loginPage?(!token)&&
+    <Login setToken={setToken}/> : null}
     </div>
+
   </main>
   );
 }

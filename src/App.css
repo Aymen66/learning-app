@@ -362,6 +362,46 @@ margin-left: auto;
 .react-confirm-alert-overlay.undefined{
 background: inherit;
 }
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  color: white;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  margin-top: -90%;
+  border-radius: 30px;
+font-size: small;
+padding: 5% 3%;
+
+}
+.btn-group button{
+  width: 50%;
+
+}
+/* .form-group:first-child{
+margin-right: 10px;
+} */
+.form-group input{
+  font-weight: 600;
+  margin: 10px;
+}
+.forgot-password,
+.forgot-password a {
+  text-align: right;
+  font-size: 13px;
+  padding-top: 10px;
+  color: #7f7d7d;
+  margin: 0;
+}
+
+.forgot-password a {
+  color: #167bff;
+}
+
 @media screen and (max-width: 700px) {
   .modalShow{
     
