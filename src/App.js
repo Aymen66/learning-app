@@ -6,9 +6,9 @@ import { HashRouter , Routes, Route } from "react-router-dom";
 import About from './About';
 import Contact from './Contact';
 import List from './List';
-import useToken from './components/useToken';
+// import useToken from './components/useToken';
 // import Registration from './components/Registration';
-import Login from './components/Login';
+// import Login from './components/Login';
 
 
 
@@ -33,12 +33,12 @@ function App() {
           writeMeaning: ""
       }
   );
-  const [loginPage, setLoginPage]=React.useState(false)
+  // const [loginPage, setLoginPage]=React.useState(false)
 
   // const [token, setToken] = React.useState();
 
   // const token = getToken();
-  const { token, setToken } = useToken();
+  // const { token, setToken } = useToken();
   
   // if(!token) {
   //   return <Login setToken={setToken} />
@@ -48,7 +48,7 @@ function App() {
     display: show? "block" : "none"
 
 }
-setTimeout(() => setLoginPage(true), 3000);
+// setTimeout(() => setLoginPage(true), 3000);
 
   function toggleDarkMode(){
 setDarkMode(function(prev){
@@ -80,8 +80,8 @@ setDarkMode(function(prev){
       </Routes>
     </HashRouter>
     
-    {loginPage?(!token)&&
-    <Login setToken={setToken}/> : null}
+    {/* {loginPage?(!token)&&
+    <Login setToken={setToken}/> : null} */}
     </div>
 
   </main>
