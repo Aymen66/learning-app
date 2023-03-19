@@ -77,7 +77,7 @@ setDarkMode(function(prev){
           <Route path="List" element={<List storedData={storedData}  randomWord={randomWord} formData={formData} show={show} setFormData={setFormData} setRandomWord={setRandomWord}  setStoredData={setStoredData} setShow={setShow} styles={styles}/>} />
 
         </Route>
-      </Routes>
+      </Routes>k
     </HashRouter>
     
     {loginPage?(!token)&&
