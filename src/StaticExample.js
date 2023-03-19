@@ -54,7 +54,7 @@ function StaticExample() {
 
 export default StaticExample;
 
-{/* <Modal.Dialog>
+/* <Modal.Dialog>
         <Modal.Header closeButton>
           <Modal.Title>Update</Modal.Title>
         </Modal.Header>
@@ -66,4 +66,4 @@ export default StaticExample;
         <Modal.Footer>
           <Button  variant="secondary">Close</Button>
         </Modal.Footer>
-      </Modal.Dialog> */}
+      </Modal.Dialog> */

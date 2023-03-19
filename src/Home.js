@@ -82,7 +82,7 @@ export default function Home (props){
                 <StaticExample/>
 
             <h1 id="app-name">Vocabulary Checker</h1>
-        <img className="homePageImg" src={homePageImg}/><br></br>
+        <img alt="home Page photo" className="homePageImg" src={homePageImg}/><br></br>
         <section>
          
       {/* )} */}

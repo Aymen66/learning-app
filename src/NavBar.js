@@ -9,7 +9,7 @@ export default function NavBar (props){
        className={props.darkMode ? "dark": ""}
 
        >
-        <img  className="logo" src={logo}/>
+        <img alt="logo" className="logo" src={logo}/>
         <ul>
       <Link to="/">Home</Link>
       <Link to="/About">About</Link>
