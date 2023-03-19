@@ -33,22 +33,22 @@ function App() {
           writeMeaning: ""
       }
   );
-  const [loginPage, setLoginPage]=React.useState(false)
+  // const [loginPage, setLoginPage]=React.useState(false)
 
   // const [token, setToken] = React.useState();
 
   // const token = getToken();
   const { token, setToken } = useToken();
   
-  // if(!token) {
-  //   return <Login setToken={setToken} />
-  // }
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
 
   const styles ={
     display: show? "block" : "none"
 
 }
-setTimeout(() => setLoginPage(true), 3000);
+// setTimeout(() => setLoginPage(true), 3000);
 
   function toggleDarkMode(){
 setDarkMode(function(prev){
@@ -80,8 +80,8 @@ setDarkMode(function(prev){
       </Routes>k
     </HashRouter>
     
-    {loginPage?(!token)&&
-    <Login setToken={setToken}/> : null}
+    {/* {loginPage?(!token)&&
+    <Login setToken={setToken}/> : null} */}
     </div>
 
   </main>

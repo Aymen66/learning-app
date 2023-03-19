@@ -40,7 +40,6 @@ export default function Home (props){
         
         // let data = 
         
-        
             if (item.word.toLowerCase().replace(/\s/g, '') === props.formData.word?.toLowerCase()) {
                 return true
 
@@ -48,11 +47,11 @@ export default function Home (props){
                 return true
 
             }
-        
+        else{
+            return true
+        }
     }));
 
-
-    
 
     React.useEffect(() => {
        localStorage.setItem("storedData", JSON.stringify(props.storedData))
@@ -82,7 +81,7 @@ export default function Home (props){
                 <StaticExample/>
 
             <h1 id="app-name">Vocabulary Checker</h1>
-        <img alt="home Page photo" className="homePageImg" src={homePageImg}/><br></br>
+        <img alt="home Page " className="homePageImg" src={homePageImg}/><br></br>
         <section>
          
       {/* )} */}
