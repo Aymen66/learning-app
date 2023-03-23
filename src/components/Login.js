@@ -15,6 +15,8 @@ async function loginUser(credentials) {
 export default function Login({ setToken }) {
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
+  const [Agreed, setAgreed] = useState(false);
+
   
 
   const handleSubmit = async e => {
@@ -25,6 +27,15 @@ export default function Login({ setToken }) {
     });
     setToken(token);
   }
+  function handleChange(event) {
+    const {name, value, type, checked} = event.target
+    setAgreed(prevAgreed => {
+        return {
+            ...prevAgreed,
+            [name]: type === "checkbox" ? checked : value
+        }
+    })
+}
 
   return(
     <div className="login-wrapper">
@@ -38,6 +49,15 @@ export default function Login({ setToken }) {
           <p>Password</p>
           <input type="password" onChange={e => setPassword(e.target.value)} required/>
         </label>
+        <br></br>
+        <input
+               type="checkbox"
+               checked={Agreed}
+               onChange={handleChange}
+               name="Agreed"
+           />
+           <label htmlFor="Agreed"> The data will be saved in your browser storage.Do you agree?</label>
+
         <div className='btn-group'>
           <button type="submit">Register</button>
         </div>
