@@ -8,6 +8,8 @@ export default function List (props){
   const [isFlipped, setIsFlipped] = React.useState(false)
   const [giveup, setGiveup] = React.useState(false)
   const [practise, setPractise] = React.useState(false)
+  const [practiseShow, setPractiseShow] = React.useState(false)
+
     function handleDelete (index){
         // const newItems = [...storedData];
         // newItems.splice(index, 1);
@@ -79,67 +81,90 @@ function toggle (){
       }
     })
       }
-    return(
-        <>
-           <button onClick={GetRandom}> GET</button> 
-        
-        <br></br>
 
-        {/* {randomWord.word !== "" && randomWord.meaning !== "" && ( */}
-   <div  onClick={changeMind} className="randomDiv">
-   {giveup? <p className="span">Give up😅? Check the answer</p>: null}
-    {practise? <p className="span"> Click again to Pracise more😃</p>: null}
-  {isFlipped?  <p className="meaningP">
-      {props.randomWord.meaning}  
-    </p> :<p className="wordP">
-    {props.randomWord.word}
-    </p>}
-  
-   {/* <p>
-      {randomWord.word}  
-    </p>
-    <p>
-    {randomWord.meaning}
-    </p> */}
-   </div>
-   <button onClick={toggle}>Show</button>
-      
-      <table style={props.styles}>
-          <thead>
-          <tr>
-              <td> Word</td>
-              <td> Meaning</td>
-
-          </tr>
-          </thead>
-          
-          <tbody>
-
-          {props.storedData.map((item , index) => (
-
-                <tr key={index}>
-
-                    <td> {item.word}</td>
-                    <td> {item.meaning}</td>
-                    {/* <td className="delete-td"> */}
-                    <button 
-                  className="delete-btn"
-                  // onClick={handleDelete}
-                  onClick={() => handleDelete(index)}
-
-              >
-                  <i className="gg-trash trash-icon"></i>
-              </button>
-                    {/* </td> */}
-                   
+      function practiceToggle (){
+        setPractiseShow(function(prevShow){
+          if(!prevShow){
+            return true
+          }else{
+            return false
+          }
+        })
+          }
+      const practiceStyle ={
+        display: practiseShow? "block" : "none"
     
-                </tr>
-      ))}
-                </tbody>
+    }
+    return(
+        <div className="listDiv" >
+          <button onClick={practiceToggle}>Practice</button>
 
+         <div style={practiceStyle} >
+           
+         <button onClick={GetRandom}> GET</button> 
+
+<br></br>
+{/* {randomWord.word !== "" && randomWord.meaning !== "" && ( */}
+
+<div  onClick={changeMind} className="randomDiv">
+
+{giveup? <p className="span">Give up😅? Check the answer</p>: null}
+{practise? <p className="span"> Click again to Pracise more😃</p>: null}
+{isFlipped?  <p className="meaningP">
+{props.randomWord.meaning}  
+</p> :<p className="wordP">
+{props.randomWord.word}
+</p>}
+
+{/* <p>
+{randomWord.word}  
+</p>
+<p>
+{randomWord.meaning}
+</p> */}
+</div>
+         </div>
+<button onClick={toggle}>Show</button>
+
+<table style={props.styles}>
+  <thead>
+  <tr>
+      <td> Word</td>
+      <td> Meaning</td>
+
+  </tr>
+  </thead>
+  
+  <tbody>
+
+  {props.storedData.map((item , index) => (
+
+        <tr key={index}>
+
+            <td> {item.word}</td>
+            <td> {item.meaning}</td>
+            {/* <td className="delete-td"> */}
+            <button 
+          className="delete-btn"
+          // onClick={handleDelete}
+          onClick={() => handleDelete(index)}
+
+      >
+          <i className="gg-trash trash-icon"></i>
+      </button>
+            {/* </td> */}
+           
+
+        </tr>
+))}
+        </tbody>
+
+
+</table>
+
+        </div>
+   
         
-      </table>
         
-        </>
     )
 }

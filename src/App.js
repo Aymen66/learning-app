@@ -33,12 +33,13 @@ function App() {
           writeMeaning: ""
       }
   );
+  const { token, setToken } = useToken();
+
   const [loginPage, setLoginPage]=React.useState(false)
 
   // const [token, setToken] = React.useState();
 
   // const token = getToken();
-  const { token, setToken } = useToken();
   
   // if(!token) {
   //   return <Login setToken={setToken} />

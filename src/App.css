@@ -354,6 +354,11 @@ aspect-ratio: 6/3;
 
 
 }
+.listDiv{
+  display: flex;
+  flex-direction: column;
+  padding-top: 20%;
+}
 .react-confirm-alert-body{
   max-width: 60%;
   margin-right: auto;
