@@ -55,6 +55,7 @@ export default function Login({ setToken }) {
                checked={Agreed}
                onChange={handleChange}
                name="Agreed"
+               required
            />
            <label htmlFor="Agreed"> The data will be saved in your browser storage.Do you agree?</label>
 
