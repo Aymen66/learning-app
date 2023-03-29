@@ -72,67 +72,68 @@ Login.propTypes = {
 };
 
 
-// // import React, { useState } from 'react'
-// // import { Alert } from 'react-bootstrap';
+// // // import React, { useState } from 'react'
+// // // import { Alert } from 'react-bootstrap';
 
-// // function Login(props) {
+// // // function Login(props) {
 
-// //     const [namelog, setNamelog] = useState(" ");
-// //     const [passwordlog, setPasswordlog] = useState(" ");
+// // //     const [namelog, setNamelog] = useState(" ");
+// // //     const [passwordlog, setPasswordlog] = useState(" ");
 
-// //     const [flag, setFlag] = useState(false);
+// // //     const [flag, setFlag] = useState(false);
 
-// //     const [home, setHome] = useState(true);
-
-
-// //     function handleLogin(e) {
-// //         e.preventDefault();
-
-// //         let pass = localStorage.getItem('hardikSubmissionPassword').replace(/"/g, "");
-// //         let mail = localStorage.getItem('hardikSubmissionName').replace(/"/g, "");
-
-// //         if (!namelog || !passwordlog) {
-// //             setFlag(true);
+// // //     const [home, setHome] = useState(true);
 
 
-// //             console.log("EMPTY");
-// //         } else if ((passwordlog !== pass) || (namelog !== mail)) {
-// //             setFlag(true);
+// // //     function handleLogin(e) {
+// // //         e.preventDefault();
 
-// //         } else {
-// //             setHome(!home);
-// //             setFlag(false);
+// // //         let pass = localStorage.getItem('hardikSubmissionPassword').replace(/"/g, "");
+// // //         let mail = localStorage.getItem('hardikSubmissionName').replace(/"/g, "");
 
-
-
-
-// //         }
-
-// //     }
+// // //         if (!namelog || !passwordlog) {
+// // //             setFlag(true);
 
 
-// //     return (
-// //         <div>
-// //             {home ? <form className='registerfolder'onSubmit={handleLogin}>
-// //                 <h3>LogIn</h3>
-// //                 <div className="form-group">
-// //                     <label>Name</label>
-// //                     <input type="text" className="form-control" placeholder="Enter name" onChange={(event) => setNamelog(event.target.value)} />
-// //                 </div>
+// // //             console.log("EMPTY");
+// // //         } else if ((passwordlog !== pass) || (namelog !== mail)) {
+// // //             setFlag(true);
 
-// //                 <div className="form-group">
-// //                     <label>Password</label>
-// //                     <input type="password" className="form-control" placeholder="Enter password" onChange={(event) => setPasswordlog(event.target.value)} />
-// //                 </div>
+// // //         } else {
+// // //             setHome(!home);
+// // //             setFlag(false);
 
-// //                 <button type="submit" className="btn btn-dark btn-lg btn-block">Login</button>
 
-// //                 {flag && <Alert color='primary' variant="warning" >
-// //                     Fill correct Info else keep trying.
-// //                         </Alert>}
-// //             </form> :null
-// //             } </div>
-// //     )
-// // }
 
-// // export default Login
+
+// // //         }
+
+// // //     }
+
+
+// // //     return (
+// // //         <div>
+// // //             {home ? <form className='registerfolder'onSubmit={handleLogin}>
+// // //                 <h3>LogIn</h3>
+// // //                 <div className="form-group">
+// // //                     <label>Name</label>
+// // //                     <input type="text" className="form-control" placeholder="Enter name" onChange={(event) => setNamelog(event.target.value)} />
+// // //                 </div>
+
+// // //                 <div className="form-group">
+// // //                     <label>Password</label>
+// // //                     <input type="password" className="form-control" placeholder="Enter password" onChange={(event) => setPasswordlog(event.target.value)} />
+// // //                 </div>
+
+// // //                 <button type="submit" className="btn btn-dark btn-lg btn-block">Login</button>
+
+// // //                 {flag && <Alert color='primary' variant="warning" >
+// // //                     Fill correct Info else keep trying.
+// // //                         </Alert>}
+// // //             </form> :null
+// // //             } </div>
+// // //     )
+// // // }
+
+// // // export default Login
+
