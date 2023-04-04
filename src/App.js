@@ -6,9 +6,9 @@ import { HashRouter , Routes, Route } from "react-router-dom";
 import About from './About';
 import Contact from './Contact';
 import List from './List';
-import useToken from './components/useToken';
-// import Registration from './components/Registration';
-import Login from './components/Login';
+// import useToken from './components/useToken';
+import Registration from './components/Registration';
+// import Login from './components/Login';
 
 
 
@@ -20,6 +20,11 @@ function getForm(){
   return JSON.parse(storeValues)
 }
 
+// function getRegister(){
+//   const storeRegister = localStorage.getItem("registerPage")
+//   if(!storeRegister)return []
+//   return JSON.parse(storeRegister)
+// }
 function App() {
   const [darkMode, setDarkMode]=React.useState(true)
 
@@ -33,9 +38,12 @@ function App() {
           writeMeaning: ""
       }
   );
-  const { token, setToken } = useToken();
+  
+  const [registerPage, setRegisterPage]= React.useState(true)
 
-  const [loginPage, setLoginPage]=React.useState(false)
+  // const { token, setToken } = useToken();
+
+  // const [loginPage, setLoginPage]=React.useState(false)
 
   // const [token, setToken] = React.useState();
 
@@ -49,7 +57,7 @@ function App() {
     display: show? "block" : "none"
 
 }
-setTimeout(() => setLoginPage(true), 3000);
+// setTimeout(() => setLoginPage(true), 3000);
 
   function toggleDarkMode(){
 setDarkMode(function(prev){
@@ -79,10 +87,13 @@ setDarkMode(function(prev){
 
         </Route>
       </Routes>
+
     </HashRouter>
     
-    {loginPage?(!token)&&
-    <Login setToken={setToken}/> : null}
+    {/* {loginPage?(!token)&&
+    <Login setToken={setToken}/> : null} */}
+      {registerPage? <Registration registerPage={registerPage} setRegisterPage={setRegisterPage}/> :""} 
+
     </div>
 
   </main>
