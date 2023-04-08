@@ -380,7 +380,7 @@ background: inherit;
   margin-top: -90%;
   border-radius: 30px;
 font-size: small;
-padding: 5% 3%;
+padding: 5% 7%;
 
 }
 .btn-group button{
@@ -406,7 +406,12 @@ margin-right: 10px;
 .forgot-password a {
   color: #167bff;
 }
-
+.checkbox{
+  margin: 0px 5px;
+}
+.checkboxDiv{
+margin:20px  10px;
+}
 @media screen and (max-width: 700px) {
   .modalShow{
     

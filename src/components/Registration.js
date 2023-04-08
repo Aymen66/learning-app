@@ -10,7 +10,7 @@ function Registration(props) {
 
     const [flag, setFlag] = useState(false);
     const [login, setLogin] = useState(true);
-    const [info, setInfo] = useState(true);
+  const [Agreed, setAgreed] = useState(false);
 
 
 
@@ -19,14 +19,15 @@ function Registration(props) {
     function handleFormSubmit(e) {
         e.preventDefault();
 
-        if (!name || !password ) {
+        if (!name || !password || !Agreed) {
             setFlag(true);
 
         } else {
             setFlag(false);
             localStorage.setItem("hardikSubmissionName", JSON.stringify(name));
             localStorage.setItem("hardikSubmissionPassword", JSON.stringify(password));
-            // localStorage.setItem("info", JSON.stringify(info));
+            localStorage.setItem("Agreed", JSON.stringify(Agreed));
+
 
 
             setLogin(!login)
@@ -47,13 +48,21 @@ function Registration(props) {
     //     setInfo(!info)
     // }
 
-
+    function handleChange(event) {
+        const {name, value, type, checked} = event.target
+        setAgreed(prevAgreed => {
+            return {
+                ...prevAgreed,
+                [name]: type === "checkbox" ? checked : value
+            }
+        })
+    }
 
     return (
         <>
            
-            {info ? <div > {login ? <form className="login-wrapper" onSubmit={handleFormSubmit}>
-                <h3>Register</h3>
+            <div > {login ? <form className="login-wrapper" onSubmit={handleFormSubmit}>
+                <h1>Register</h1>
 
                 <div className="form-group">
                     <label>Name</label>
@@ -64,6 +73,20 @@ function Registration(props) {
                     <label>Password</label>
                     <input type="password" className="form-control" placeholder="Enter password" onChange={(event) => setPassword(event.target.value)} />
                 </div>
+                <div 
+               className='checkboxDiv' 
+               >
+                <input
+               type="checkbox"
+               checked={Agreed}
+               onChange={handleChange}
+               name="Agreed"
+               required
+               className='checkbox' 
+           />
+           <label htmlFor="Agreed"> The data will be saved in your browser storage.Do you agree?</label>
+                </div>
+
 
 
                 <button type="submit" className="btn btn-dark btn-lg btn-block">Register</button>
@@ -77,9 +100,7 @@ function Registration(props) {
                 }
 
             </form> : <Login />}
-            </div> : <div>
-                   
-                </div>}
+            </div>
         </>
     )
 }

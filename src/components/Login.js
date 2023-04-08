@@ -72,7 +72,7 @@
 // };
 
 
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Alert } from 'react-bootstrap';
 
 function Login(props) {
