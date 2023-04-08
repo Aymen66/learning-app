@@ -1,7 +1,16 @@
 import React from "react";
 import logo from "./vc.jpg";
+
 import {  Outlet, Link } from "react-router-dom";
+import Login from "./components/Login";
+import LogOutBtn from "./components/logOutBtn";
+
+// import LogoutPage from "./components/LogoutPage";
+
 export default function NavBar (props){
+    function handleLogout(){
+        props.setLogOutPage(true)
+    }
     return(
     <header>
 
@@ -15,6 +24,7 @@ export default function NavBar (props){
       <Link to="/About">About</Link>
       <Link to="/Contact">Contact</Link>
       <Link to="/List">My List</Link>
+      
         {/* <li>Home</li>
         <li>About</li>
         <li>Contact</li>
@@ -23,6 +33,7 @@ export default function NavBar (props){
 
 
        </ul>
+       <div className="darkmode-logout-div">
        <div 
                 className="toggler" 
             >
@@ -34,9 +45,18 @@ export default function NavBar (props){
                     <div className="toggler--slider--circle"></div>
                 </div>
                 <p className="toggler--dark">Dark</p>
-            </div>
 
+            </div>
+            {props.islogOutBtn? <button onClick={handleLogout} className="logOut">LogOut</button>
+ : null }
+
+
+
+
+       </div>
+       
        </nav>
+       
        <Outlet />
 
     </header>

@@ -9,7 +9,9 @@ import List from './List';
 // import useToken from './components/useToken';
 import Registration from './components/Registration';
 // import Login from './components/Login';
+import LogoutPage from "./components/LogoutPage";
 
+// import LogOutBtn from "./components/logOutBtn";
 
 
 
@@ -40,6 +42,8 @@ function App() {
   );
   
   const [registerPage, setRegisterPage]= React.useState(false)
+  const [logOutPage, setLogOutPage]= React.useState(false)
+  const [islogOutBtn, setIsLogOutBtn]= React.useState(getRegister)
 
   // const { token, setToken } = useToken();
 
@@ -68,13 +72,26 @@ setDarkMode(function(prev){
 })
   }
   React.useEffect(() => {
+
     if (localStorage.getItem("hardikSubmissionPassword") === null) {
+
       setTimeout(() => setRegisterPage(true), 3000);
+
     } else {
         setRegisterPage(false)
+    // setLogOutPage(true)
+    // setRegisterPage(false)
+    setIsLogOutBtn(true)
+
+
+
+
     }
   }, [registerPage]);
   
+  React.useEffect(() => {
+      localStorage.setItem("islogOutBtn", JSON.stringify(islogOutBtn));
+        }, [islogOutBtn]);
   return (
   <main className={darkMode ? "dark" : ""}>
     <div  className='container'>
@@ -82,7 +99,7 @@ setDarkMode(function(prev){
       {/* <Main darkMode={darkMode}/> */}
        <HashRouter >
       <Routes>
-        <Route  path="/" element={<NavBar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}>
+        <Route  path="/" element={<NavBar logOutPage={logOutPage} setLogOutPage={setLogOutPage}   islogOutBtn={islogOutBtn} setIsLogOutBtn={setIsLogOutBtn} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}>
         <Route index element={<Home darkMode={darkMode} storedData={storedData}  randomWord={randomWord} formData={formData} show={show} setFormData={setFormData} setRandomWord={setRandomWord} setStoredData={setStoredData} setShow={setShow}/>}  />
 
           <Route path="About" element={<About />} />
@@ -98,6 +115,7 @@ setDarkMode(function(prev){
     {/* {loginPage?(!token)&&
     <Login setToken={setToken}/> : null} */}
       {registerPage? <Registration registerPage={registerPage} setRegisterPage={setRegisterPage}/> :""} 
+     {logOutPage ?<LogoutPage  />:""}
 
     </div>
 

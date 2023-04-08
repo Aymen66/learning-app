@@ -84,7 +84,7 @@ function Login(props) {
 
     const [home, setHome] = useState(true);
 
-
+   
     function handleLogin(e) {
         e.preventDefault();
 
@@ -103,6 +103,12 @@ function Login(props) {
             setHome(!home);
             setFlag(false);
             props.setRegisterPage(false)
+             props.setIsLogOutBtn(true)
+            
+
+            // props.setLogOutPage(fa)
+
+            // props. setLogOutBtn(true)
 
 
 
