@@ -20,11 +20,11 @@ function getForm(){
   return JSON.parse(storeValues)
 }
 
-// function getRegister(){
-//   const storeRegister = localStorage.getItem("registerPage")
-//   if(!storeRegister)return []
-//   return JSON.parse(storeRegister)
-// }
+function getRegister(){
+  const storeRegister = localStorage.getItem("registerPage")
+  if(!storeRegister)return []
+  return JSON.parse(storeRegister)
+}
 function App() {
   const [darkMode, setDarkMode]=React.useState(true)
 
@@ -39,7 +39,7 @@ function App() {
       }
   );
   
-  const [registerPage, setRegisterPage]= React.useState(true)
+  const [registerPage, setRegisterPage]= React.useState(false)
 
   // const { token, setToken } = useToken();
 
@@ -57,7 +57,6 @@ function App() {
     display: show? "block" : "none"
 
 }
-// setTimeout(() => setLoginPage(true), 3000);
 
   function toggleDarkMode(){
 setDarkMode(function(prev){
@@ -68,7 +67,13 @@ setDarkMode(function(prev){
   }
 })
   }
-
+  React.useEffect(() => {
+    if (localStorage.getItem("hardikSubmissionPassword") === null) {
+      setTimeout(() => setRegisterPage(true), 3000);
+    } else {
+        setRegisterPage(false)
+    }
+  }, [registerPage]);
   
   return (
   <main className={darkMode ? "dark" : ""}>

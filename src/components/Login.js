@@ -102,7 +102,7 @@ function Login(props) {
         } else {
             setHome(!home);
             setFlag(false);
-            // props.setRegisterPage(false)
+            props.setRegisterPage(false)
 
 
 
@@ -110,11 +110,11 @@ function Login(props) {
         }
 
     }
-    useEffect(() => {
-      localStorage.setItem("registerPage", props.registerPage);
-        }, [props.registerPage]);
+    // useEffect(() => {
+    //   localStorage.setItem("registerPage", JSON.stringify(props.registerPage));
+    //     }, [props.registerPage]);
         
-     
+        
     return (
         <div>
             {home ? <form className="login-wrapper" onSubmit={handleLogin}>

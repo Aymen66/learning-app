@@ -68,7 +68,7 @@ function Registration(props) {
 
                 <button type="submit" className="btn btn-dark btn-lg btn-block">Register</button>
                 <p className="forgot-password text-right">
-                    Already registered <a href="#" onClick={handleClick} >log in?</a>
+                    Already registered <a href={Login} onClick={handleClick} >log in?</a>
                 </p>
                 {flag &&
                     <Alert color='primary' variant="danger" >
