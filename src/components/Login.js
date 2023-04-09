@@ -88,8 +88,8 @@ function Login(props) {
     function handleLogin(e) {
         e.preventDefault();
 
-        let pass = localStorage.getItem('hardikSubmissionPassword').replace(/"/g, "");
-        let mail = localStorage.getItem('hardikSubmissionName').replace(/"/g, "");
+        let pass = localStorage.getItem('passwordRegister').replace(/"/g, "");
+        let mail = localStorage.getItem('nameRegister').replace(/"/g, "");
 
         if (!namelog || !passwordlog) {
             setFlag(true);
@@ -104,6 +104,7 @@ function Login(props) {
             setFlag(false);
             props.setRegisterPage(false)
              props.setIsLogOutBtn(true)
+        
             
 
             // props.setLogOutPage(fa)

@@ -1,9 +1,8 @@
 import React from "react";
 import Registration from '../components/Registration';
 
-export default function LogoutPage (){
+export default function LogoutPage (props){
     
-
 
 
     
@@ -11,7 +10,10 @@ export default function LogoutPage (){
         <div className="logOutPage">
        {/* <p>Log in again or Register</p> */}
        <div className="custom">
-       <h2>You've logged out</h2>
+       {props.loggedOut&&<h2>You've logged out!</h2>}
+       {props.loggedIn&&<h2>You've logged in!</h2>}
+
+       
        <div className="registeration-componenet">
        <Registration />
 

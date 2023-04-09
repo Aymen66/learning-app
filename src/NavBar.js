@@ -10,6 +10,12 @@ import {  Outlet, Link } from "react-router-dom";
 export default function NavBar (props){
     function handleLogout(){
         props.setLogOutPage(true)
+        localStorage.removeItem("nameRegister");
+
+        localStorage.removeItem("passwordRegister");
+        localStorage.removeItem("Agreed");
+        props.setLoggedOut(true)
+
     }
     return(
     <header>

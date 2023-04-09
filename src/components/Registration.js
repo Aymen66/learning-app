@@ -16,22 +16,23 @@ function Registration(props) {
 
 
     // on form submit...
-    function handleFormSubmit(e) {
-        e.preventDefault();
+    function handleFormSubmit() {
+        // e.preventDefault();
 
         if (!name || !password || !Agreed) {
             setFlag(true);
 
         } else {
             setFlag(false);
-            localStorage.setItem("hardikSubmissionName", JSON.stringify(name));
-            localStorage.setItem("hardikSubmissionPassword", JSON.stringify(password));
+            localStorage.setItem("nameRegister", JSON.stringify(name));
+            localStorage.setItem("passwordRegister", JSON.stringify(password));
             localStorage.setItem("Agreed", JSON.stringify(Agreed));
-
-
 
             setLogin(!login)
             // setInfo(!info)
+
+            props.setLoggedOut(false)
+            props.setLogOutPage(false)
 
 
         }
@@ -41,6 +42,7 @@ function Registration(props) {
     // Directly to the login page
     function handleClick() {
         setLogin(!login)
+        
     }
 
     // Company Info
@@ -91,7 +93,7 @@ function Registration(props) {
 
                 <button type="submit" className="btn btn-dark btn-lg btn-block">Register</button>
                 <p className="forgot-password text-right">
-                    Already registered <a href={Login} onClick={handleClick} >log in?</a>
+                    Already registered ? <br></br><a href={Login} onClick={handleClick} >log in?</a>
                 </p>
                 {flag &&
                     <Alert color='primary' variant="danger" >

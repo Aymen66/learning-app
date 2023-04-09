@@ -389,7 +389,7 @@ padding: 5% 7%;
 
 }
 .btn{
-  width: 50%;
+  width: 60%;
 
 }
 .darkmode-logout-div{
@@ -465,13 +465,14 @@ a{
   border-radius: 5%;
   }
   .login-wrapper{
-    width: 90%;
+    width: 80%;
+    margin-right: 10px;
     
   }
   .login-wrapper-div{
     position: relative;
 
-    margin: -25px ;
+  
   }
   .logOut{
 width: 20%;
@@ -515,22 +516,22 @@ width: 20%;
 margin-left: 0%;
   } */
   .form-group input{
-    font-weight: 300;
+    font-weight: 500;
     margin: 10px auto;
-    font-size:7px;
+    font-size:10px;
     display: block;
-    width: 40%;
+    width: 50%;
     
   }
 label{
-  font-size:9px;
+  font-size:10px;
 
 }
   .logOutPage{
     background-color: black;
     position: relative;
     margin-top: -95%;
-    padding: 10% ;
+    padding: 5% ;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
@@ -545,4 +546,22 @@ label{
     margin-top: 150px;
   }
  
+.checkboxDiv{
+margin:10px  0px;
+}
+.custom h2{
+  position: relative;
+top: -100px;
+
+}
+.forgot-password,
+.forgot-password a {
+  text-align: left;
+  font-size: 10px;
+  padding-top: 0px;
+}
+.forgot-password a {
+  font-size: 14px;
+
+}
   }

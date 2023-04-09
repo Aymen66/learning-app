@@ -44,6 +44,10 @@ function App() {
   const [registerPage, setRegisterPage]= React.useState(false)
   const [logOutPage, setLogOutPage]= React.useState(false)
   const [islogOutBtn, setIsLogOutBtn]= React.useState(getRegister)
+  const [loggedIn, setLoggedIn]= React.useState(false)
+  const [loggedOut, setLoggedOut]= React.useState(false)
+
+
 
   // const { token, setToken } = useToken();
 
@@ -73,9 +77,8 @@ setDarkMode(function(prev){
   }
   React.useEffect(() => {
 
-    if (localStorage.getItem("hardikSubmissionPassword") === null) {
+    if (localStorage.getItem("passwordRegister") === null) {
       setIsLogOutBtn(false)
-
       setTimeout(() => setRegisterPage(true), 3000);
 
     } else {
@@ -83,6 +86,9 @@ setDarkMode(function(prev){
     // setLogOutPage(true)
     // setRegisterPage(false)
     setIsLogOutBtn(true)
+    // setLoggedOut(!loggedOut)
+    // setLogOutPage(!logOutPage)
+
 
 
 
@@ -100,7 +106,7 @@ setDarkMode(function(prev){
       {/* <Main darkMode={darkMode}/> */}
        <HashRouter >
       <Routes>
-        <Route  path="/" element={<NavBar logOutPage={logOutPage} setLogOutPage={setLogOutPage}   islogOutBtn={islogOutBtn} setIsLogOutBtn={setIsLogOutBtn} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}>
+        <Route  path="/" element={<NavBar loggedOut={loggedOut} setLoggedOut={setLoggedOut}loggedIn={loggedIn} logOutPage={logOutPage} setLogOutPage={setLogOutPage}   islogOutBtn={islogOutBtn} setIsLogOutBtn={setIsLogOutBtn} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}>
         <Route index element={<Home darkMode={darkMode} storedData={storedData}  randomWord={randomWord} formData={formData} show={show} setFormData={setFormData} setRandomWord={setRandomWord} setStoredData={setStoredData} setShow={setShow}/>}  />
 
           <Route path="About" element={<About />} />
@@ -115,8 +121,8 @@ setDarkMode(function(prev){
     
     {/* {loginPage?(!token)&&
     <Login setToken={setToken}/> : null} */}
-      {registerPage? <Registration registerPage={registerPage} setRegisterPage={setRegisterPage}/> :""} 
-     {logOutPage ?<LogoutPage  />:""}
+      {registerPage? <Registration logOutPage={logOutPage} setLogOutPage={setLogOutPage} registerPage={registerPage} setRegisterPage={setRegisterPage}/> :""} 
+     {logOutPage ?<LogoutPage loggedOut={loggedOut} setLoggedOut={setLoggedOut}loggedIn={loggedIn} setLoggedIn={setLoggedIn} />:""}
 
     </div>
 
