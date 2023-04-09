@@ -61,7 +61,7 @@ function Registration(props) {
     return (
         <>
            
-            <div > {login ? <form className="login-wrapper" onSubmit={handleFormSubmit}>
+            <div className="login-wrapper-div" > {login ? <form className="login-wrapper" onSubmit={handleFormSubmit}>
                 <h1>Register</h1>
 
                 <div className="form-group">

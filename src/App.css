@@ -388,6 +388,10 @@ padding: 5% 7%;
   width: 50%;
 
 }
+.btn{
+  width: 50%;
+
+}
 .darkmode-logout-div{
   display: flex;
   justify-content: space-between;
@@ -433,6 +437,25 @@ margin-right: 10px;
 .checkboxDiv{
 margin:20px  10px;
 }
+.custom{
+  position: relative;
+  margin-top: 200px;
+  display:flex;
+}
+.custom h2{
+  position: relative;
+top: -150px;
+margin-right: 10px;
+line-height: 6vh;
+
+}
+a{
+  cursor: pointer;
+}
+.registeration-componenet{
+  padding: 0%;
+  margin: 0%;
+}
 @media screen and (max-width: 700px) {
   .modalShow{
     
@@ -440,6 +463,15 @@ margin:20px  10px;
     right: 20%;
   
   border-radius: 5%;
+  }
+  /* .login-wrapper{
+    width: 60%;
+    
+  } */
+  .login-wrapper-div{
+    position: relative;
+
+    margin: -20px;
   }
   .logOut{
 width: 20%;
