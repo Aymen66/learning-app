@@ -2,8 +2,8 @@ import React from "react";
 import logo from "./vc.jpg";
 
 import {  Outlet, Link } from "react-router-dom";
-import Login from "./components/Login";
-import LogOutBtn from "./components/logOutBtn";
+// import Login from "./components/Login";
+// import LogOutBtn from "./components/logOutBtn";
 
 // import LogoutPage from "./components/LogoutPage";
 

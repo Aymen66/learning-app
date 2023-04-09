@@ -74,6 +74,7 @@ setDarkMode(function(prev){
   React.useEffect(() => {
 
     if (localStorage.getItem("hardikSubmissionPassword") === null) {
+      setIsLogOutBtn(false)
 
       setTimeout(() => setRegisterPage(true), 3000);
 
