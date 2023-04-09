@@ -464,10 +464,10 @@ a{
   
   border-radius: 5%;
   }
-  /* .login-wrapper{
-    width: 60%;
+  .login-wrapper{
+    width: 90%;
     
-  } */
+  }
   .login-wrapper-div{
     position: relative;
 
@@ -514,4 +514,25 @@ width: 20%;
     background: #77450b;
 margin-left: 0%;
   } */
+  .form-group input{
+    font-weight: 300;
+    margin: 10px auto;
+    font-size: small;
+    display: block;
+    width: 40%;
+    
+  }
+
+  .logOutPage{
+    background-color: black;
+    position: relative;
+    margin-top: -90%;
+    padding: 10%;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+
+
+  }
   }
