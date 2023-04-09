@@ -452,10 +452,10 @@ line-height: 6vh;
 a{
   cursor: pointer;
 }
-.registeration-componenet{
+/* .registeration-componenet{
   padding: 0%;
   margin: 0%;
-}
+} */
 @media screen and (max-width: 700px) {
   .modalShow{
     
@@ -471,7 +471,7 @@ a{
   .login-wrapper-div{
     position: relative;
 
-    margin: -20px;
+    margin: -25px ;
   }
   .logOut{
 width: 20%;
@@ -517,17 +517,20 @@ margin-left: 0%;
   .form-group input{
     font-weight: 300;
     margin: 10px auto;
-    font-size: small;
+    font-size:7px;
     display: block;
     width: 40%;
     
   }
+label{
+  font-size:9px;
 
+}
   .logOutPage{
     background-color: black;
     position: relative;
-    margin-top: -90%;
-    padding: 10%;
+    margin-top: -95%;
+    padding: 10% ;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
@@ -535,4 +538,11 @@ margin-left: 0%;
 
 
   }
+  .login-wrapper h1{
+    font-size: x-large;
+  }
+  .custom{
+    margin-top: 150px;
+  }
+ 
   }
