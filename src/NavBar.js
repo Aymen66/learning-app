@@ -15,6 +15,9 @@ export default function NavBar (props){
         localStorage.removeItem("passwordRegister");
         localStorage.removeItem("Agreed");
         props.setLoggedOut(true)
+        props.setLoggedOut(true)
+        props.setIsLogOutBtn(false)
+
 
     }
     return(

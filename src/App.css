@@ -388,6 +388,10 @@ padding: 5% 7%;
   width: 50%;
 
 }
+/* .logOutPageBtn{
+  
+  width: 30%;
+} */
 .btn{
   width: 60%;
 
@@ -411,7 +415,10 @@ margin-right: 0%;
   position: relative;
   margin-top: -90%;
   padding: 10%;
+  margin-left: auto;
+
 }
+
 /* .form-group:first-child{
 margin-right: 10px;
 } */
@@ -439,14 +446,15 @@ margin:20px  10px;
 }
 .custom{
   position: relative;
-  margin-top: 200px;
+  margin-top: 150px;
   display:flex;
+  flex-direction: column;
 }
 .custom h2{
   position: relative;
-top: -150px;
+top: -10px;
 margin-right: 10px;
-line-height: 6vh;
+/* line-height: 6vh; */
 
 }
 a{
@@ -543,7 +551,7 @@ label{
     font-size: x-large;
   }
   .custom{
-    margin-top: 150px;
+    margin-top: 120px;
   }
  
 .checkboxDiv{

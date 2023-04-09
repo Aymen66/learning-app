@@ -16,8 +16,8 @@ function Registration(props) {
 
 
     // on form submit...
-    function handleFormSubmit() {
-        // e.preventDefault();
+    function handleFormSubmit(e) {
+        e.preventDefault();
 
         if (!name || !password || !Agreed) {
             setFlag(true);
@@ -29,10 +29,12 @@ function Registration(props) {
             localStorage.setItem("Agreed", JSON.stringify(Agreed));
 
             setLogin(!login)
+                props.setIsLogOutBtn(true)
+                props.setLoggedOut(false)
+            
             // setInfo(!info)
 
-            props.setLoggedOut(false)
-            props.setLogOutPage(false)
+            // props.setLogOutPage(false)
 
 
         }

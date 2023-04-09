@@ -44,7 +44,6 @@ function App() {
   const [registerPage, setRegisterPage]= React.useState(false)
   const [logOutPage, setLogOutPage]= React.useState(false)
   const [islogOutBtn, setIsLogOutBtn]= React.useState(getRegister)
-  const [loggedIn, setLoggedIn]= React.useState(false)
   const [loggedOut, setLoggedOut]= React.useState(false)
 
 
@@ -88,17 +87,23 @@ setDarkMode(function(prev){
     setIsLogOutBtn(true)
     // setLoggedOut(!loggedOut)
     // setLogOutPage(!logOutPage)
-
-
-
-
+    setLoggedOut(false)
 
     }
   }, [registerPage]);
   
+  
   React.useEffect(() => {
       localStorage.setItem("islogOutBtn", JSON.stringify(islogOutBtn));
+    // setLoggedOut(false)
+
+    // if (!localStorage === null) {
+    //   setLoggedOut(false)
+
+    // }
+
         }, [islogOutBtn]);
+       
   return (
   <main className={darkMode ? "dark" : ""}>
     <div  className='container'>
@@ -106,7 +111,7 @@ setDarkMode(function(prev){
       {/* <Main darkMode={darkMode}/> */}
        <HashRouter >
       <Routes>
-        <Route  path="/" element={<NavBar loggedOut={loggedOut} setLoggedOut={setLoggedOut}loggedIn={loggedIn} logOutPage={logOutPage} setLogOutPage={setLogOutPage}   islogOutBtn={islogOutBtn} setIsLogOutBtn={setIsLogOutBtn} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}>
+        <Route  path="/" element={<NavBar loggedOut={loggedOut} setLoggedOut={setLoggedOut} logOutPage={logOutPage} setLogOutPage={setLogOutPage}   islogOutBtn={islogOutBtn} setIsLogOutBtn={setIsLogOutBtn} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}>
         <Route index element={<Home darkMode={darkMode} storedData={storedData}  randomWord={randomWord} formData={formData} show={show} setFormData={setFormData} setRandomWord={setRandomWord} setStoredData={setStoredData} setShow={setShow}/>}  />
 
           <Route path="About" element={<About />} />
@@ -121,8 +126,8 @@ setDarkMode(function(prev){
     
     {/* {loginPage?(!token)&&
     <Login setToken={setToken}/> : null} */}
-      {registerPage? <Registration logOutPage={logOutPage} setLogOutPage={setLogOutPage} registerPage={registerPage} setRegisterPage={setRegisterPage}/> :""} 
-     {logOutPage ?<LogoutPage loggedOut={loggedOut} setLoggedOut={setLoggedOut}loggedIn={loggedIn} setLoggedIn={setLoggedIn} />:""}
+      {registerPage? <Registration loggedOut={loggedOut} setLoggedOut={setLoggedOut} setIsLogOutBtn={setIsLogOutBtn} logOutPage={logOutPage} setLogOutPage={setLogOutPage} registerPage={registerPage} setRegisterPage={setRegisterPage}/> :""} 
+     {logOutPage ?<LogoutPage setLogged={setLoggedOut} loggedOut={loggedOut} setLoggedOut={setLoggedOut} />:""}
 
     </div>
 

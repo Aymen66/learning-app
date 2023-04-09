@@ -103,8 +103,8 @@ function Login(props) {
             setHome(!home);
             setFlag(false);
             props.setRegisterPage(false)
-             props.setIsLogOutBtn(true)
-        
+            //  props.setIsLogOutBtn(true)
+        // window.location.reload(false);
             
 
             // props.setLogOutPage(fa)
@@ -115,6 +115,7 @@ function Login(props) {
 
 
         }
+
 
     }
     // useEffect(() => {
