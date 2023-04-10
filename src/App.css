@@ -388,10 +388,10 @@ padding: 5% 7%;
   width: 50%;
 
 }
-/* .logOutPageBtn{
-  
+.logOutPageBtn{
+  margin: 10px 20px;
   width: 30%;
-} */
+}
 .btn{
   width: 60%;
 
@@ -411,7 +411,7 @@ margin-left: 0%;
 margin-right: 0%;
 }
 .logOutPage{
-  background-color: black;
+  /* background-color: black; */
   position: relative;
   margin-top: -90%;
   padding: 10%;
@@ -450,12 +450,20 @@ margin:20px  10px;
   display:flex;
   flex-direction: column;
 }
+.custom2{
+  background-color: black;
+  position: relative;
+  margin-top: -40%;
+  padding: 5%;
+  border-radius: 20px;
+}
 .custom h2{
   position: relative;
 top: -10px;
+
 margin-right: 10px;
 /* line-height: 6vh; */
-
+/* background-color: black; */
 }
 a{
   cursor: pointer;
@@ -493,6 +501,12 @@ width: 20%;
   .logoutbtn{
     text-decoration: none;
     color: white;
+  }
+  .logOutPageBtn{
+   width:  30%;
+  margin: 10px 20px 10px 20px;
+
+
   }
   .container{
       max-width: 100%;
@@ -536,7 +550,7 @@ label{
 
 }
   .logOutPage{
-    background-color: black;
+    /* background-color: black; */
     position: relative;
     margin-top: -95%;
     padding: 5% ;
@@ -552,6 +566,12 @@ label{
   }
   .custom{
     margin-top: 120px;
+
+  }
+  .custom2{
+    background-color: black;
+    width: 100%;
+    
   }
  
 .checkboxDiv{
@@ -559,7 +579,7 @@ margin:10px  0px;
 }
 .custom h2{
   position: relative;
-top: -100px;
+top: -10px;
 
 }
 .forgot-password,

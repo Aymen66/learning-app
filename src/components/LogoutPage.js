@@ -10,12 +10,12 @@ export default function LogoutPage (props){
 function closeHandle(){
     setLogOutLog(false)
     props.setLogged(false)
-        // window.location.reload(false);
 }
 
    function goBackHandle(){
     setLoggedIn(true)
     setOff(false)
+    // window.location.reload(false);
 
     props.setLogged(false)
     
@@ -26,11 +26,14 @@ function closeHandle(){
          {logOutLog&& <div className="logOutPage">
        {/* <p>Log in again or Register</p> */}
        <div className="custom">
-       {props.loggedOut&&<h2>You've logged out!</h2>}
-       {props.loggedIn&&<h2>You've logged in!</h2>}
-    {off&&<button className="logOutPageBtn" onClick={closeHandle}>Close</button>}
-    {off&&<button className="logOutPageBtn"onClick={goBackHandle}> Go back again</button>}
+       {props.loggedOut&&<div className="custom2">
+        <h2>You've logged out!</h2>
+       {off&&<button className="logOutPageBtn" onClick={closeHandle}>Close</button>}
+    {off&&<button className="logOutPageBtn"onClick={goBackHandle}> Log back</button>}
 
+       </div>}
+       {/* {props.loggedIn&&<h2>You've logged in!</h2>} */}
+    
 
        <div className="custom"> 
        {loggedIn&&<Registration  />}
